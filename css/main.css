@@ -20,14 +20,18 @@ body {
 
 /* barcode container */
 .anim-box {
-	position: relative;
+  /* position: relative; */
+  position: absolute;
   /* margin: 10%; */
   /* width: 80%; */
-	width: 300px;
+	width: 80%;
+  left: 10%;
+  height: 60%;
+  top: 0px;
   /* height: 80%; */
-	height: 120px;
-  padding-left: 30px;
-  padding-right: 30px;
+	/* height: 120px; */
+  /* padding-left: 30px;
+  padding-right: 30px; */
 	/* padding: 60px 30px; */
 }
 
@@ -68,7 +72,9 @@ body {
 .anim-item {
 	display: inline-block;
 	background-color: white;
-	height: 100px;
+  /* height: 100px; */
+	height: 50%;
+  margin-top: 10%;
 }
 
 .anim-item-sm {
