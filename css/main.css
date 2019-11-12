@@ -4,6 +4,7 @@ html, body {
   cursor: crosshair;
   background-color: #26282a;
   overflow: hidden;
+  transition: all 2s;
 }
 
 .bar {
@@ -70,20 +71,79 @@ html, body {
   }
 }
 
-.center {
-  top: 30%;
-  left: 25%;
-  width: 50%;
-  height: 40%;
-  border-width: thin;
-  border-style: dashed;
-  border-color: white;
+.beep {
+  animation-name: beep;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-play-state: running;
+}
+
+@keyframes beep {
+  0% {
+    background: red;
+  }
+  100% {
+    background: inherit;
+  }
+}
+
+.ring {
+  top: 50%;
+  left: 50%;
   position: absolute;
 }
 
-.barcode {
-  color: white;
-  vertical-align: middle;
-  text-align: center;
-  font-family: 'Libre Barcode 39', cursive;
+.outer-ring {
+  width: 300px;
+  height: 300px;
+  margin-left: -150px;
+  margin-top: -150px;
+  border-radius: 150px;
+  border: thin dashed white;
+}
+
+.inner-ring {
+  width: 100px;
+  height: 100px;
+  margin-left: -50px;
+  margin-top: -50px;
+  border-radius: 50px;
+  background-color: white;
+}
+
+
+@media only screen and ((max-width: 400px) or (max-height: 400px)) {
+  .outer-ring {
+    width: 200px;
+    height: 200px;
+    margin-left: -100px;
+    margin-top: -100px;
+    border-radius: 100px;
+  }
+  .inner-ring {
+    width: 50px;
+    height: 50px;
+    margin-left: -25px;
+    margin-top: -25px;
+    border-radius: 25px;
+    background-color: white;
+  }
+}
+
+@media only screen and ((max-width: 200px) or (max-height: 200px)) {
+  .outer-ring {
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+    margin-top: -50px;
+    border-radius: 50px;
+  }
+  .inner-ring {
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    margin-top: -10px;
+    border-radius: 10px;
+    background-color: white;
+  }
 }

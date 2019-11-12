@@ -4,7 +4,11 @@ beep.load();
 
 window.onload = function(){
   var page = document.getElementById("body");
-  page.onclick = function() {
+  page.onmousedown = function() {
     beep.play();
+    page.classList.add("beep");
+    setTimeout(function () {
+      page.classList.remove("beep");
+    }, 1000);
   }
 }
