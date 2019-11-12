@@ -1,14 +1,11 @@
+var page = document.getElementById("body");
+page.addEventListener("mousedown", function(event){
+  beep.play();
+  page.classList.add("flash");
+});
 
-beep = new Audio("audio/beep.mp3");
+var beep = new Audio("audio/beep.mp3");
 beep.load();
-
-window.onload = function(){
-  var page = document.getElementById("body");
-  page.onmousedown = function() {
-    beep.play();
-    page.classList.add("beep");
-    setTimeout(function () {
-      page.classList.remove("beep");
-    }, 1000);
-  }
-}
+beep.addEventListener("ended", function(event){
+  page.classList.remove("flash");
+});
