@@ -1,18 +1,18 @@
-var page = document.getElementById("body");
-page.addEventListener("mousedown", function(event){
+var flasher = document.getElementById("flash");
+flasher.addEventListener("mousedown", function(event){
   event.preventDefault();
   beep.play();
-  page.classList.add("flash");
+  flasher.classList.add("flashing");
 });
-page.addEventListener("touchstart", function(event){
+flasher.addEventListener("touchstart", function(event){
   event.preventDefault();
   beep.play();
-  page.classList.add("flash");
+  flasher.classList.add("flashing");
 });
 
 
 var beep = new Audio("audio/beep.mp3");
 beep.load();
 beep.addEventListener("ended", function(event){
-  page.classList.remove("flash");
+  flasher.classList.remove("flashing");
 });
