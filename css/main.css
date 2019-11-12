@@ -3,6 +3,7 @@ html, body {
   height: 100%;
   cursor: crosshair;
   background-color: #26282a;
+  overflow: hidden;
 }
 
 .bar {
