@@ -1,15 +1,10 @@
 var flasher = document.getElementById("flash");
-flasher.addEventListener("mousedown", function(event){
-  event.preventDefault();
+function stopFlashing(event){
   beep.play();
   flasher.classList.add("flashing");
-});
-flasher.addEventListener("touchstart", function(event){
-  event.preventDefault();
-  beep.play();
-  flasher.classList.add("flashing");
-});
-
+}
+document.addEventListener("mousedown", stopFlashing);
+document.addEventListener("touchstart", stopFlashing);
 
 var beep = new Audio("audio/beep.mp3");
 beep.load();
